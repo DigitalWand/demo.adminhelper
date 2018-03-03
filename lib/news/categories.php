@@ -58,6 +58,9 @@ class CategoriesTable extends DataManager
             'PARENT_CATEGORY' => array(
                 'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
                 'reference' => array('=this.PARENT_ID' => 'ref.ID'),
+            ),
+            'NEWS_ID' => array(
+                'data_type' => 'integer',
             )
         );
     }

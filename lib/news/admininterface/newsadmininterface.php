@@ -58,6 +58,17 @@ class NewsAdminInterface extends AdminInterface
                         'HELPER' => '\Demo\AdminHelper\News\AdminInterface\CategoriesListHelper',
                         'REQUIRED' => true
                     ),
+                    'ANY_REF_DATA' => array(
+                        'WIDGET' => new OrmElementWidget(),
+                        'HELPER' => '\Demo\AdminHelper\News\AdminInterface\CategoriesListHelper',
+                        'TITLE_FIELD_NAME' => 'TITLE',
+                        'MULTIPLE' => true,
+                        'MULTIPLE_FIELDS' => array(
+                            'ID',
+                            'ENTITY_ID' => 'NEWS_ID',
+                            'VALUE' => 'TITLE'
+                        ),
+                    ),
                     'TEXT' => array(
                         'WIDGET' => new VisualEditorWidget(),
                         'HEADER' => false

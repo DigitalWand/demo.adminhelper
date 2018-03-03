@@ -3,6 +3,7 @@
 namespace Demo\AdminHelper\News;
 
 use Bitrix\Main\Entity\DataManager;
+use Bitrix\Main\Entity\ReferenceField;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Type\DateTime;
 
@@ -78,6 +79,10 @@ class NewsTable extends DataManager
             'CATEGORY' => array(
                 'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
                 'reference' => array('=this.CATEGORY_ID' => 'ref.ID'),
+            ),
+            'ANY_REF_DATA' => array(
+                'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
+                'reference' => array('=this.ID' => 'ref.NEWS_ID'),
             )
         );
     }
