@@ -55,10 +55,12 @@ class CategoriesTable extends DataManager
                 'data_type' => 'string',
                 'title' => Loc::getMessage('DEMO_AH_NEWS_CATEGORIES_TITLE')
             ),
+            //"Родительский раздел" - связь "один ко многим"
             'PARENT_CATEGORY' => array(
                 'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
                 'reference' => array('=this.PARENT_ID' => 'ref.ID'),
             ),
+            //"Связанные новости" - связь "один ко сногим"
             'NEWS_ID' => array(
                 'data_type' => 'integer',
             )

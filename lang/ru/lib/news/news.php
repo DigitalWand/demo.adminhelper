@@ -3,6 +3,7 @@
 $MESS['DEMO_AH_NEWS_TITLE'] = 'Заголовок';
 $MESS['DEMO_AH_NEWS_TEXT'] = 'Описание';
 $MESS['DEMO_AH_NEWS_CATEGORY'] = 'Раздел';
+$MESS['DEMO_AH_NEWS_ONE_TO_MANY_REL'] = 'Связь "один ко многим"';
 $MESS['DEMO_AH_NEWS_SOURCE'] = 'Ссылка на первоисточник';
 $MESS['DEMO_AH_NEWS_IMAGE'] = 'Фотографии';
 $MESS['DEMO_AH_NEWS_DATE_CREATE'] = 'Дата создания';

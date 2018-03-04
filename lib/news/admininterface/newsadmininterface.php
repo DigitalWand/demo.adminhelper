@@ -43,7 +43,8 @@ class NewsAdminInterface extends AdminInterface
                         'WIDGET' => new NumberWidget(),
                         'READONLY' => true,
                         'FILTER' => true,
-                        'HIDE_WHEN_CREATE' => true
+                        'HIDE_WHEN_CREATE' => true,
+                        'TITLE' => Loc::getMessage('DEMO_AH_NEWS_ID_TITLE') //Определить заголовки полей можно тут, а не тольйо к getMap()
                     ),
                     'TITLE' => array(
                         'WIDGET' => new StringWidget(),
@@ -51,6 +52,7 @@ class NewsAdminInterface extends AdminInterface
                         'FILTER' => '%',
                         'REQUIRED' => true
                     ),
+                    // Связь "один ко многим"
                     'CATEGORY_ID' => array(
                         'WIDGET' => new OrmElementWidget(),
                         'FILTER' => true,
@@ -58,6 +60,7 @@ class NewsAdminInterface extends AdminInterface
                         'HELPER' => '\Demo\AdminHelper\News\AdminInterface\CategoriesListHelper',
                         'REQUIRED' => true
                     ),
+                    // Связь "один ко многим"
                     'ANY_REF_DATA' => array(
                         'WIDGET' => new OrmElementWidget(),
                         'HELPER' => '\Demo\AdminHelper\News\AdminInterface\CategoriesListHelper',

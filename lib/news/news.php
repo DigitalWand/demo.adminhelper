@@ -76,13 +76,19 @@ class NewsTable extends DataManager
                 'data_type' => 'integer',
                 'title' => Loc::getMessage('DEMO_AH_NEWS_IMAGE')
             ),
+            //"Раздел" - связь "один ко многим", к одной категории относятся несколько новостей,
+            // привязка хранится в новости в поле "CATEGORY_ID"
             'CATEGORY' => array(
                 'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
                 'reference' => array('=this.CATEGORY_ID' => 'ref.ID'),
             ),
+
+            //Пример связи "один ко многим" - к одной новости относится несколько категорий,
+            // привязка хранится в таблице категорий в поле NEWS_ID
             'ANY_REF_DATA' => array(
                 'data_type' => '\Demo\AdminHelper\News\CategoriesTable',
                 'reference' => array('=this.ID' => 'ref.NEWS_ID'),
+                'title' => Loc::getMessage('DEMO_AH_NEWS_ONE_TO_MANY_REL'),
             )
         );
     }
